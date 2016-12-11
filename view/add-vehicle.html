@@ -1,0 +1,61 @@
+<div class="container">
+    <div id="vehicle-container">
+        <form id="new-vehicle" method="get" novalidate>
+            <h2 id="title-form-vehicle">Vehicle :</h2>
+            <div>
+                <fieldset>
+                    <div>
+                        <label for="license-plate">Vehicle's license plate</label>
+                        <div><input id="license-plate" type="text" /></div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div>
+                        <label for="typeVehicule">
+                            Vehicles's type
+                        </label>
+                        <div>
+                            <select required="true" id="typeVehicule">
+                                <option value="">Choose a type</option>
+                                <option value="1">Car</option>
+                                <option value="2">Motorbike</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div>
+                        <label for="level">
+                            Level
+                        </label>
+                        <div>
+                            <select required="true" id="level">
+                                <option value="">Choose level</option>
+                                <option value="1">level 1</option>
+                                <option value="2">level 2</option>
+                                <option value="3">level 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div>
+                        <label for="slot">
+                            Slot
+                        </label>
+                        <div>
+                            <select required="true" id="slot">
+                                <option value="">Choose slot</option>
+                                <option value="1">slot 1</option>
+                                <option value="2">slot 2</option>
+                                <option value="3">slot 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <input type="hidden" id="vehicle-id">
+                <button type="submit" id="save"><i class="fa fa-plus-square icon" aria-hidden="true"></i> ADD </button>
+            </div>
+        </form>
+    </div>
+</div>

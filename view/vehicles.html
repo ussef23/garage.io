@@ -1,0 +1,57 @@
+
+    <div class="container">
+      <div id="vehicle-container"> 
+
+      <div id="vehicle-filter">
+      <form>
+            <fieldset>
+              <div class="field-search">
+      <input type="text" id="search" ng-model="search" ng-change="vehiclesFiltredBy('licensePlate', search)">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      </div></fieldset>
+      </form>
+
+      <ul>
+      <li>Levels
+        <ul>
+          <li ng-repeat="level in parking.levels" >
+            <a ng-click="vehiclesFiltredBy('level',level.level)" href="">{{level.label}}</a>
+          </li>
+        </ul>
+      </li>
+      <li>Type
+        <ul>
+          <li ><a ng-click="vehiclesFiltredBy('type','Car')" href="">Car</a></li>
+          <li><a ng-click="vehiclesFiltredBy('type','Motorbike')" href="">Motorbike</a></li>
+        </ul>
+      </li>
+      </ul>
+
+      </div>
+        <div id="list-vehicle-wp">
+          <div id="vehicle-section-header">
+            <div>
+              <div class="pagination-top">
+                <sup class="from">{{currentPage}}</sup>
+                <sub class="to">{{noOfPages}}</sub> /
+                <span class="total">{{filtredList.length}}</span> Vehicles
+                <a href="" ng-disabled="currentPage == 1" ><i class="fa fa-angle-up" aria-hidden="true" ng-click="selectPage(-1)" ></i></a>
+                <a href="" ng-disabled="currentPage == noOfPages"  ><i class="fa fa-angle-down" aria-hidden="true" ng-click="selectPage(1)" ></i></a>
+                <a class="reset" title="reset" href="" ng-click="vehiclesFiltredBy()"><i class="fa fa-dot-circle-o icon" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div id="vehicle-section-body">
+            <ul id="vehicles" class="clearfix">
+              <li ng-repeat="vehicle in filtredList | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                <div class="license-plate">{{vehicle.licensePlate}}</div>
+                <div class="level">Level: <span>{{vehicle.level}}</span></div>
+                 <div class="type-vehicule">{{vehicle.type}}</div>
+                <div class="slot">Slot: <span>{{vehicle.slot}}</span></div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div> 

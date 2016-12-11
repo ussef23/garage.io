@@ -1,0 +1,17 @@
+
+<div class="container">
+    <h2>NAME :</h2>
+    <div>
+        <input type="text" ng-model="parking.Name" />
+    </div>
+
+    <div id="parking-section-body">
+        <h2>LEVELS LIST :</h2>
+        <ul id="parking" class="clearfix">
+            <li ng-repeat="level in parking.levels">
+                <div class="level">{{level.label}}</div>
+                <div class="slots">Slots: <span>{{level.nb_slot}}</span></div>
+            </li>
+        </ul>
+    </div>
+ </div>
